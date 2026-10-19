@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deli — teks jadi foto kertas</title>
+<meta name="description" content="Deli mengubah teks esai jadi foto tulisan tangan di kertas. Gratis, jalan di browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Hanken+Grotesk:wght@400;600&family=Caveat:wght@500&family=Kalam&family=Indie+Flower&family=Patrick+Hand&family=Shadows+Into+Light&family=Reenie+Beanie&family=Homemade+Apple&family=Gochi+Hand&family=Covered+By+Your+Grace&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Deli</h1>
+  <p>Tempel teks esai, dapat foto tulisan tangan di kertas.</p>
+</header>
+<main>
+  <section class="panel" aria-label="Pengaturan">
+    <label>Teks
+      <textarea id="txt" rows="12" data-live>Pendidikan adalah kunci untuk membuka pintu masa depan. Dengan belajar, kita tidak hanya mendapat ilmu, tetapi juga belajar berpikir kritis dan menghargai perbedaan.
+
+Karena itu, setiap orang perlu menjaga semangat belajar sepanjang hidupnya, di mana pun dan kapan pun.</textarea>
+    </label>
+    <label>Header halaman 1 (opsional)
+      <input id="head" type="text" placeholder="Nama — Kelas — 19 Oktober 2026" data-live>
+    </label>
+    <div class="row">
+      <label>Tulisan <select id="font" data-live></select></label>
+      <label>Tinta <select id="ink" data-live></select></label>
+    </div>
+    <label>Kertas <select id="paper" data-live></select></label>
+    <label>Ukuran huruf <input id="fs" type="range" min="28" max="70" value="44" data-live></label>
+    <label>Jarak baris <input id="lh" type="range" min="40" max="90" value="60" data-live></label>
+    <label>Kerapian tulisan (kanan = makin acak) <input id="mess" type="range" min="0" max="100" value="35" data-live></label>
+    <div class="row">
+      <label>Efek foto
+        <select id="fx" data-live>
+          <option value="bersih">Scan bersih</option>
+          <option value="foto" selected>Foto kertas</option>
+          <option value="meja">Foto di atas meja</option>
+        </select>
+      </label>
+      <label>Kualitas
+        <select id="q" data-live>
+          <option value="1">Normal</option>
+          <option value="1.5">Tinggi</option>
+          <option value="2">Sangat tinggi</option>
+        </select>
+      </label>
+    </div>
+    <label>Format unduhan
+      <select id="fmt"><option value="png">PNG</option><option value="jpg">JPG</option></select>
+    </label>
+    <div class="row">
+      <button id="shuffle" type="button" class="ghost">Acak ulang tulisan</button>
+      <button id="dl" type="button">Unduh semua</button>
+    </div>
+  </section>
+  <section id="pages" aria-live="polite"></section>
+</main>
+<footer>Deli — proyek open source, lisensi MIT.</footer>
+<script src="script.js"></script>
+</body>
+</html>

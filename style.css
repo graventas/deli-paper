@@ -1,0 +1,41 @@
+:root{
+  --tile:#eef1ea; --pickle:#1f4d3a; --mustard:#f0b323; --ink:#14201a;
+  --panel:#fbfcf9; --line:#c9d3c4; --muted:#55645b;
+}
+*{box-sizing:border-box}
+html{background:var(--tile)}
+body{margin:0;font:400 16px/1.5 "Hanken Grotesk",system-ui,sans-serif;color:var(--ink);
+  min-height:100vh;display:flex;flex-direction:column}
+header{background:var(--pickle);color:#e9f1ea;padding:22px clamp(16px,4vw,40px);
+  display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;border-bottom:6px solid var(--mustard)}
+h1{margin:0;font:800 clamp(44px,8vw,72px)/1 "Bricolage Grotesque",sans-serif;
+  color:var(--mustard);letter-spacing:-.03em}
+header p{margin:0;font-size:18px}
+main{flex:1;display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:24px;
+  padding:24px clamp(16px,4vw,40px);align-items:start}
+.panel{background:var(--panel);border:2px solid var(--pickle);border-radius:6px;padding:18px;
+  display:grid;gap:14px;position:sticky;top:16px}
+label{display:grid;gap:4px;font-weight:600;font-size:14px;color:var(--pickle)}
+textarea,input[type=text],select{font:400 15px/1.4 inherit;font-family:inherit;color:var(--ink);
+  background:#fff;border:1.5px solid var(--line);border-radius:4px;padding:8px 10px;width:100%}
+textarea{resize:vertical;min-height:140px}
+input[type=range]{width:100%;accent-color:var(--pickle)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{font:600 15px inherit;font-family:inherit;cursor:pointer;border:2px solid var(--pickle);
+  background:var(--mustard);color:var(--ink);padding:10px 12px;border-radius:4px}
+button:hover{background:#f6c443}
+button.ghost{background:transparent;color:var(--pickle)}
+button.ghost:hover{background:#e3ebe0}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}
+#pages{display:grid;gap:28px;justify-items:center;padding:24px;border-radius:6px;
+  background-color:#e4e9df;
+  background-image:linear-gradient(#f4f6f1 2px,transparent 2px),linear-gradient(90deg,#f4f6f1 2px,transparent 2px);
+  background-size:60px 30px}
+#pages figure{margin:0;width:min(100%,720px);display:grid;gap:10px}
+#pages canvas{width:100%;height:auto;display:block;box-shadow:0 8px 24px rgba(20,32,26,.28)}
+#pages figcaption{display:flex;justify-content:space-between;align-items:center;
+  background:var(--panel);padding:6px 6px 6px 12px;border-radius:4px;font-weight:600;font-size:14px}
+#pages figcaption button{padding:6px 12px;font-size:14px}
+.msg{background:var(--panel);padding:14px 18px;border-radius:4px;font-weight:600}
+footer{padding:16px;text-align:center;color:var(--muted);font-size:14px}
+@media(max-width:820px){main{grid-template-columns:1fr}.panel{position:static}}
